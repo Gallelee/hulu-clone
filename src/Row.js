@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import axios from 'axios'
+import './Row.css'
 
 function Row(props){
 
@@ -22,7 +23,11 @@ function Row(props){
             <div className="media-row">
                 {media.map((data)=>{
                     return (
-                        <h3>{data.title}</h3>
+                        <img
+                        key={data.id} 
+                        className="row-image"
+                        src={`https://image.tmdb.org/t/p/original${data.poster_path}`} alt={data.title}
+                        />
                     )
                 })}
             </div>
